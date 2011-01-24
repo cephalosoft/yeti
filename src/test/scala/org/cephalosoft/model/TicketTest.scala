@@ -6,9 +6,13 @@ import Assert._
 class TicketTest {
 
   @Test def addItemToTicket() {
-    var ticket: Ticket = new Ticket()
-    ticket.item("Widget")
-    assertEquals(ticket.item, "Widget")
+    val ticket: Ticket = new Ticket()
+    val item: Item = Item.create.ticket(ticket).number(12345).description("Widget")
+    item.save
+    ticket.items += item
+    ticket.save
+    assertEquals(ticket.items.head.description, "Widget")
+    assertEquals(ticket.items.head.number, 12345)
   }
   
   @Test def addRequestorToTicket() {
