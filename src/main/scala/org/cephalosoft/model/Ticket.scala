@@ -4,7 +4,7 @@ import net.liftweb.mapper._
 import net.liftweb.util._
 import net.liftweb.common._
 
-object TicketMetaData extends Ticket with KeyedMetaMapper[Long, Ticket] {
+object TicketMetaData extends Ticket with KeyedMetaMapper[Long, Ticket] with CRUDify[Long, Ticket] {
   override def dbTableName = "tickets"
   override def fieldOrder = List(requestor, handler, item)
 }

@@ -7,9 +7,8 @@ import org.cephalosoft.model.Ticket
 class TicketTest {
 
   @Test def addItemToTicket() {
-    ticket = new Ticket()
-    ticket.addItem("Widget")
-    assertEquals(ticket.getItem(), "Widget")
+    var ticket: Ticket = new Ticket()
+    assertEquals(ticket.item, "Widget")
   }
 }
 }
