@@ -32,7 +32,7 @@ class Boot {
 
     // where to search snippet
     LiftRules.addToPackages("org.cephalosoft")
-    Schemifier.schemify(true, Schemifier.infoF _, User, TicketMetaData)
+    Schemifier.schemify(true, Schemifier.infoF _, User, Ticket)
 
     // Build SiteMap
     def sitemap() = SiteMap(
