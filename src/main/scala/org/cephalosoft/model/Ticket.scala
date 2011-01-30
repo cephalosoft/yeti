@@ -9,7 +9,7 @@ object Ticket extends Ticket with KeyedMetaMapper[Long, Ticket] with CRUDify[Lon
 }
 
 class Ticket extends KeyedMapper[Long, Ticket] with OneToMany [Long, Ticket]{
-  def getSingleton = TicketMetaData
+  def getSingleton = Ticket
   def primaryKeyField = id
   object id extends MappedLongIndex(this)
   object requestor extends MappedText(this)
